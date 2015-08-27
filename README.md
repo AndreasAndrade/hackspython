@@ -1,2 +1,2 @@
 # hackspython
-Alguns scripts para hackear fotos de sites.
+Alguns scripts para hackear arquivos de sites.
