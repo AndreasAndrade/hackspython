@@ -1,5 +1,6 @@
 # coding: utf-8
 import urllib2
+import os
 
 
 source = '''
@@ -975,6 +976,7 @@ pageTracker._trackPageview();
 </body>
     
 </html>
+
 '''
 
 
@@ -999,13 +1001,17 @@ while indice_atual != -1:
         print (url)
         # audio = requests.get(url)
         audio = urllib2.urlopen(url).read()
-        tipo = type(audio)
+        caminho = 'C:/Users/Andreas/Desktop/arquivos hackeados/audios_unidade3'
+        if not os.path.exists(caminho):
+            os.makedirs(caminho)
         # filef = open("C:/Users/Andreas/Desktop/afterfest/%s" % nome_do_audio, 'wb')
-        filef = open("C:/Users/Andreas/Desktop/fotos hackeadas/audios/%s" % mp3, 'wb')
+        filef = open(caminho + "/" + mp3, 'wb')
         #filef = open(nome_do_audio, 'wb')
         filef.write(audio)
         filef.close()
         
     indice_atual = source.find(tag, indice_atual + 1)
+    
+print 'terminou...........'
     
     
